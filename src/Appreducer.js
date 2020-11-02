@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Appreducer = (state,action) => {
     switch(action.type){
@@ -10,6 +10,10 @@ const Appreducer = (state,action) => {
         return{
             transactions: [...state.transactions,action.payload]
         };
+        default:
+            return{
+                transactions: state.transactions
+            }
     }
 }
 export default Appreducer;
