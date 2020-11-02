@@ -1,6 +1,6 @@
 #root {
   margin: auto;
-  width: 40%;
+  width: max-content;
   background-color: #9c88ff;
   box-shadow: 0 0 8px #a5aaa8;
   font-family: "Lato", sans-serif;
