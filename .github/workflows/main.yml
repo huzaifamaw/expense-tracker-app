@@ -32,6 +32,8 @@ jobs:
         run: npm install
       - name: creating build
         run: npm run build
+      - name: npm cache clear
+        run: npm cache clean --force
       - name: intsall surging
         run: npm install --global surge
       - name: deploying
