@@ -15,11 +15,24 @@ export default function Input(){
     //     setText("");
     //     setnum("");
     //     }else{
-    //         alert("ENTER EVERY VALUE PLEASE!")
+    //         
     //     }
         
     // }
 
+    
+    const ChangePlease = (e)=>{
+
+        e.preventDefault()
+
+        if(text.length>0 && num.length>0){
+        setText("")
+        setnum("")
+        context.Add({id: Math.random()*100000,name: text,amount: parseInt(num,10)})}
+        else{
+            alert("ENTER EVERY VALUE PLEASE!")
+        }
+        }
  
    
     return (
@@ -33,12 +46,7 @@ export default function Input(){
             <form>
                 <input required='required' type="text" value={text} onChange={(e)=>{setText(e.target.value)}} placeholder="Enter Description"></input>
                 <input required type="number" value={num} onChange={(e)=>{setnum(e.target.value)}} placeholder="Enter Amount"></input>
-                <button type='submit' className="submit" onClick={(e)=>{
-                    e.preventDefault()
-                    setText("")
-                    setnum("")
-                    context.Add({id: Math.random()*100000,name: text,amount: parseInt(num,10)})
-                    }}>Submit</button>
+                <button type='submit' className="submit" onClick={ChangePlease}>Submit</button>
             </form>
         </div>
     )
